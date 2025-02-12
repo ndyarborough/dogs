@@ -80,9 +80,14 @@ export const fetchDogBreeds = async (): Promise<string[]> => {
 
 export const fetchDogIds = async (
   filters: DogFilters,
-  size = 100,
+  size = 20,
   from?: number
-): Promise<string[]> => {
+): Promise<{
+  resultIds: string[];
+  total: number;
+  next?: string;
+  prev?: string;
+}> => {
   const params = new URLSearchParams();
   if (filters.breeds) {
     filters.breeds.forEach((breed) => params.append('breeds', breed));
@@ -102,9 +107,14 @@ export const fetchDogIds = async (
 
   if (response.ok) {
     const data = await response.json();
-    return data.resultIds;
+    return {
+      resultIds: data.resultIds,
+      total: data.total,
+      next: data.next,
+      prev: data.prev,
+    };
   }
-  return [];
+  return { resultIds: [], total: 0 };
 };
 
 // POST /dogs

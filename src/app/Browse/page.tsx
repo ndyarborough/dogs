@@ -40,29 +40,30 @@ const Browse: FC = () => {
     };
 
     const getDogs = async () => {
-      const dogIds = await fetchDogIds(filters);
-      setTotalDogs(dogIds.length);
-      setTotalPages(Math.ceil(dogIds.length / 20)); // 20 dogs per page
+      const { resultIds, total } = await fetchDogIds(
+        filters,
+        20,
+        currentPage * 20
+      ); // 20 dogs per page
 
-      const paginatedIds = dogIds.slice(
-        currentPage * 20,
-        (currentPage + 1) * 20
-      );
-      const data = await fetchDogsByIds(paginatedIds);
+      setTotalDogs(total);
+      setTotalPages(Math.ceil(total / 20)); // Calculate total pages based on the total dogs
+
+      const data = await fetchDogsByIds(resultIds); // Fetch details for the dog IDs
       setDogs(data);
     };
 
     getAllBreeds();
     getDogs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters, currentPage]);
+  }, [filters, currentPage, loggedIn]);
 
   return (
-    <div className="px-4 pb-8">
+    <div className="pb-8">
       <FloatingButtonGroup />
 
       {isFilterOpen && <Filters />}
-      <h4 className="md:px-[5%] lg:px-[10%] my-4 font-bold">
+      <h4 className=" px-[5%] lg:px-[10%] my-4 font-bold">
         Dogs matching your filters
       </h4>
       <>

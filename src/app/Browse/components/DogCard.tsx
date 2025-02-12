@@ -21,7 +21,7 @@ const getAgeCategory = (age: number): string => {
 
 const DogCard: React.FC<DogCardProps> = ({ dog, onFavorite, isFavorite }) => {
   return (
-    <div className="border rounded-md shadow-lg flex flex-col h-full hover:scale-105 transition-transform duration-200">
+    <div className="border bg-primary rounded-md shadow-lg flex flex-col h-full hover:scale-105 transition-transform duration-200">
       <Image
         src={dog.img}
         alt={dog.name}

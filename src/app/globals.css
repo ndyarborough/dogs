@@ -3,23 +3,23 @@
 
 @layer utilities {
   .input {
-    @apply border-secondary border-2 rounded leading-loose indent-2;
+    @apply border-secondary border-1 rounded leading-loose indent-2;
   }
   .btn {
     @apply bg-secondary text-primary px-4 py-2 rounded border-secondary border-1 hover:bg-accent transition duration-300 ease-in-out;
   }
 
   .btn-secondary {
-    @apply bg-primary text-secondary px-4 py-2 rounded border-secondary border-1 hover:bg-accent transition duration-300 ease-in-out;
+    @apply bg-accent text-primary px-4 py-2 rounded border-1 hover:bg-primary transition duration-300 ease-in-out;
   }
   .input-secondary {
-    @apply border-primary text-primary border-2 rounded leading-loose indent-2;
+    @apply border-secondary border-2 rounded leading-loose indent-2;
   }
   .select {
-    @apply bg-secondary text-primary border-2 rounded leading-loose p-1 pl-0 indent-1;
+    @apply border-2 rounded leading-loose p-1 pl-0 indent-1;
   }
   .option {
-    @apply bg-secondary text-primary hover:bg-accent;
+    @apply bg-secondary text-primary hover:bg-accent focus:border-0
   }
 }
 
@@ -66,4 +66,8 @@ h5 {
 
 h6 {
   font-size: 1rem;
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #e4fde1, #b4d8c6, #89b3ac, #658e92, #658e92, #658e92);
 }

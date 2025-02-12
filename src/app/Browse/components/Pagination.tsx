@@ -5,7 +5,7 @@ const Pagination: React.FC = () => {
   const { currentPage, totalPages, totalDogs, setCurrentPage } = useBrowse();
 
   return (
-    <div className="mt-4 flex items-center justify-self-center justify-center gap-4 bg-secondary text-primary text-sm w-fit py-0.5 px-4 rounded-lg shadow-md">
+    <div className="mt-4 flex items-center justify-self-center justify-center gap-4 bg-secondary text-primary text-sm w-fit py-0.5 px-4 rounded-full shadow-md">
       {/* Previous button */}
       <button
         onClick={() => setCurrentPage(currentPage - 1)}
