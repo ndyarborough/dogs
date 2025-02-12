@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     // Html and Body tags are required in the layout
     <html lang="en">
-      <body className="bg-primary text-secondary w-screen h-screen">
+      <body className="bg-gradient text-secondary w-screen h-screen">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

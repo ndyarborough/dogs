@@ -14,7 +14,7 @@ const FloatingButtonGroup: React.FC = () => {
   const { handleLogout } = useAuth();
 
   return (
-    <div className="sticky bg-primary top-0 flex flex-wrap justify-center mr-2 md:justify-end md:pr-4 py-2 mb-5 gap-2 md:gap-6 z-50">
+    <div className="sticky bg-primary top-0 flex flex-wrap justify-center md:justify-end md:pr-4 py-2 mb-5 gap-2 md:gap-6 z-50">
       <button
         onClick={() => redirect('/')}
         className="border-1 p-2 rounded-full flex items-center justify-center gap-2"

@@ -1,5 +1,6 @@
 {
   "name": "dogs",
+  "homepage": "https://ndyarborough.github.io/take-home-fetch",
   "version": "0.1.0",
   "private": true,
   "scripts": {

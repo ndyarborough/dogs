@@ -52,7 +52,7 @@ const Filters: FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-secondary mx-auto border-accent border-1 p-4 max-w-[760px] flex flex-col gap-2"
+      className="mx-auto p-4 max-w-[760px] flex flex-col gap-2"
     >
       <select
         name="breeds"
@@ -109,7 +109,7 @@ const Filters: FC = () => {
         className="input-secondary"
       />
 
-      <button className="btn-secondary" type="submit">
+      <button className="btn" type="submit">
         Apply Filters
       </button>
     </form>
