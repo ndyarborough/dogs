@@ -1,5 +1,4 @@
 'use client';
-
 import { checkAuth, logout, login } from '@/services/api';
 import { createContext, useContext, useEffect, useState } from 'react';
 
