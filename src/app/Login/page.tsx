@@ -23,27 +23,30 @@ const Login: FC = () => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="m-[20dvw] flex flex-col space-y-4">
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        placeholder="Name"
-        onChange={handleChange}
-        className="input"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="input"
-      />
-      <button type="submit" className="btn">
-        Login
-      </button>
-    </form>
+    <div className="flex flex-col h-full max-h-[100dvh] max-w-[400px] justify-center align-middle text-center mx-auto gap-3">
+      <h1>Login</h1>
+      <form onSubmit={handleLogin} className="flex flex-col space-y-4">
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          placeholder="Name"
+          onChange={handleChange}
+          className="input"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          className="input"
+        />
+        <button type="submit" className="btn">
+          Login
+        </button>
+      </form>
+    </div>
   );
 };
 
