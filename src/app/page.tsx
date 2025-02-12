@@ -5,9 +5,9 @@ import Welcome from './Welcome/page';
 import Login from './Login/page';
 
 const Home: FC = () => {
-  const { loggedIn, setLoggedIn } = useAuth();
+  const { loggedIn } = useAuth();
 
-  return loggedIn ? <Welcome /> : <Login setLoggedIn={setLoggedIn} />;
+  return loggedIn ? <Welcome /> : <Login />;
 };
 
 export default Home;

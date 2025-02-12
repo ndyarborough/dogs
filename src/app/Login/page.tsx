@@ -1,29 +1,25 @@
+'use client';
 import { FC, useState, ChangeEvent } from 'react';
-import { login } from '../../services/api';
+import { useAuth } from '../../Context/AuthContext';
 
 interface FormData {
   name: string;
   email: string;
 }
 
-interface LoginProps {
-  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Login: FC<LoginProps> = ({ setLoggedIn }) => {
+const Login: FC = () => {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '' });
+  const { login } = useAuth();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
     const { name, email } = formData;
-    const response = await login(name, email);
-    if (response.success) {
-      setLoggedIn(true);
-    }
+    await login(name, email);
   };
 
   return (
