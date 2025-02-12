@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import BackArrow from '../../../imgs/back-arrow.png';
 import Logout from '../../../imgs/logout.png';
