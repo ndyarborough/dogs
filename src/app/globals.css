@@ -6,7 +6,7 @@
     @apply border-secondary border-1 rounded leading-loose indent-2;
   }
   .btn {
-    @apply bg-secondary text-primary px-4 py-2 rounded border-secondary border-1 hover:bg-accent transition duration-300 ease-in-out;
+    @apply bg-secondary text-primary font-primary px-4 py-2 rounded border-secondary border-1 hover:bg-accent transition duration-300 ease-in-out;
   }
 
   .btn-secondary {
@@ -34,7 +34,7 @@
 
   /* fonts */
   --font-primary: 'Quicksand', serif;
-  --font-secondary: 'Open Sans', serif;
+  --font-secondary: 'Oswald', serif;
 
   /* font weights */
   --font-weight-light: 300;
@@ -42,6 +42,10 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald';
 }
 
 h1 {

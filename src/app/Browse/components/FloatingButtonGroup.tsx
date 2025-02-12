@@ -7,43 +7,56 @@ import { useAuth } from '@/Context/AuthContext';
 import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import { useBrowse } from '../context/BrowseContext';
+import Filters from '../Filters/page';
 
 const FloatingButtonGroup: React.FC = () => {
-  const { isFilterOpen, setIsFilterOpen, setIsFavoriteOpen, favoriteDogs } =
+  const { setIsFilterOpen, setIsFavoriteOpen, favoriteDogs, isFilterOpen } =
     useBrowse();
   const { handleLogout } = useAuth();
 
   return (
-    <div className="sticky bg-primary top-0 flex flex-wrap justify-center md:justify-end md:pr-4 py-2 mb-5 gap-2 md:gap-6 z-50">
-      <button
-        onClick={() => redirect('/')}
-        className="border-1 p-2 rounded-full flex items-center justify-center gap-2"
-      >
-        <Image src={BackArrow} alt="back arrow icon" />
-        Back to Home
-      </button>
-      <button
-        onClick={handleLogout}
-        className="border-1 p-2 rounded-full flex items-center justify-center gap-2"
-      >
-        <Image src={Logout} alt="Logout Icon" className="w-5 h-5" />
-        Logout
-      </button>
-      <button
-        onClick={() => setIsFilterOpen((prev) => !prev)}
-        className="border-1 p-2 rounded-full flex items-center justify-center gap-2"
-      >
-        <Image src={FilterImage} alt="Filter Icon" className="w-5 h-5" />
-        {isFilterOpen ? 'Close Filters' : 'Filters'}
-      </button>
+    <div className="sticky bg-gradient top-0 flex flex-col py-2 mb-5 gap-2 z-50">
+      {/* Buttons Row */}
+      <div className="flex justify-between gap-2 px-2">
+        {/* Left Side: Back to Home and Logout */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => redirect('/')}
+            className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
+          >
+            <Image src={BackArrow} alt="back arrow icon" />
+            Home
+          </button>
+          <button
+            onClick={handleLogout}
+            className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
+          >
+            <Image src={Logout} alt="Logout Icon" className="w-5 h-5" />
+            Logout
+          </button>
+        </div>
 
-      <button
-        onClick={() => setIsFavoriteOpen(true)}
-        className="border-1 p-2 rounded-full flex items-center justify-center gap-2"
-      >
-        <Image src={Heart} alt="Favorites Icon" className="w-5 h-5" />
-        Favorites ({favoriteDogs.length})
-      </button>
+        {/* Right Side: Filters and Favorites */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => setIsFavoriteOpen(true)}
+            className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
+          >
+            <Image src={Heart} alt="Favorites Icon" className="w-5 h-5" />({' '}
+            {favoriteDogs.length} )
+          </button>
+          <button
+            onClick={() => setIsFilterOpen((prev) => !prev)}
+            className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
+          >
+            <Image src={FilterImage} alt="Filter Icon" className="w-5 h-5" />
+            {isFilterOpen && 'Close Filters'}
+          </button>
+        </div>
+      </div>
+
+      {/* Conditional Filters */}
+      {isFilterOpen && <Filters />}
     </div>
   );
 };
