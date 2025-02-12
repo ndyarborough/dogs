@@ -30,44 +30,4 @@ Before running the application, ensure you have the following installed:
    ```sh
    npm run dev
    ```
-   The application will be available at `http://localhost:5173/` (default Vite port). Check the terminal for the exact URL if it's different.
-
-## Building for Production
-
-To create an optimized build of the project, run:
-
-```sh
-npm run build
-```
-
-This will generate a `dist/` folder containing the production-ready files.
-
-## Previewing the Production Build
-
-To preview the built app locally, use:
-
-```sh
-npm run preview
-```
-
-## Linting
-
-To check for linting issues, run:
-
-```sh
-npm run lint
-```
-
-## Deployment
-
-The project is set up to deploy to GitHub Pages. To deploy, run:
-
-```sh
-npm run deploy
-```
-
-This will build the project and push the `dist/` folder to the `gh-pages` branch.
-
-## License
-
-This project is licensed under the MIT License.
+   The application will be available at `http://localhost:3000/` (default NextJS port). Check the terminal for the exact URL if it's different.
