@@ -27,7 +27,7 @@ const DogCard: React.FC<DogCardProps> = ({ dog, onFavorite, isFavorite }) => {
         alt={dog.name}
         width={500}
         height={400}
-        className="w-full h-40 object-cover rounded-tr-md rounded-tl-md"
+        className="w-full h-90 object-cover rounded-tr-md rounded-tl-md"
       />
 
       <div className="px-3 pb-3 flex flex-col flex-grow">
