@@ -1,3 +1,4 @@
+'use client';
 import { FC, ChangeEvent, FormEvent } from 'react';
 import { fetchZipCodesByLocation } from '@/services/api';
 import { useBrowse } from '../context/BrowseContext';
