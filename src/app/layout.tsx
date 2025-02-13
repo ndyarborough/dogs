@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gradient text-secondary max-w-dvw max-h-svw">
+      <body className="bg-gradient text-secondary h-screen w-screen">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
