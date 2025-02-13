@@ -23,7 +23,7 @@ const Login: FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-full max-h-[100dvh] max-w-[400px] justify-center align-middle text-center mx-auto gap-3">
+    <div className="flex flex-col h-full max-h-[100dvh] w-[80%] max-w-[400px] justify-center align-middle text-center mx-auto gap-3">
       <h1>Login</h1>
       <form onSubmit={handleLogin} className="flex flex-col space-y-4">
         <input

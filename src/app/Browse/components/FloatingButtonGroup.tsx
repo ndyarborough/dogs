@@ -43,15 +43,14 @@ const FloatingButtonGroup: React.FC = () => {
             onClick={() => setIsFavoriteOpen(true)}
             className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
           >
-            <Image src={Heart} alt="Favorites Icon" className="w-5 h-5" />({' '}
-            {favoriteDogs.length} )
+            <Image src={Heart} alt="Favorites Icon" className="w-5 h-5" />
+            {favoriteDogs.length}
           </button>
           <button
             onClick={() => setIsFilterOpen((prev) => !prev)}
             className="bg-primary border-1 p-2 rounded-full flex items-center justify-center gap-2"
           >
             <Image src={FilterImage} alt="Filter Icon" className="w-5 h-5" />
-            {isFilterOpen && 'Close Filters'}
           </button>
         </div>
       </div>
